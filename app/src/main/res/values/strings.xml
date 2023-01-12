@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <!--     Strings used for fragments for navigation-->
+    <string name="first_fragment_label">Calculation NMCK</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second</string>
+    <string name="CalculationNMCK">РАСЧЕТ НМЦК</string>
+    <string name="textview">For the provision of security services within the framework of the Federal Law On the Contract System in the field of procurement of goods, works, services for state and Municipal Needs dated 05.04.2013 N 44-FZ</string>
+    <string name="Name_organization">Enter the name of the organization</string>
+    <string name="edit_nmck_author">Official of the customer</string>
+    <string name="there_is_nothing_here">There is nothing here</string>
+    <string name="add_new_calculation">Add new calculation</string>
+    <string name="description_post_save">Save</string>
+    <string name="todo">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next_calculation">Detailed calculation</string>
+    <string name="required_data">Enter the required data</string>
+    <string name="number_guards">Number of guards at the post</string>
+    <string name="security_hours">Number of hours of post security</string>
+    <string name="number_days_protection">Number of days of post security</string>
+    <string name="number_posts">Number of required security posts under the contract</string>
+    <string name="minimum_wage">Minimum_wage</string>
+    <string name="number_days">Number of holidays and weekends</string>
+    <string name="night_shifts">Night shifts (yes/no)</string>
+    <string name="special_equipment">Availability of special equipment at the guard (yes/no)</string>
+    <string name="mass_events">Holding mass events (yes/no)</string>
+    <string name="object_anti_terrorist">An object with anti-terrorist security requirements (yes/no)</string>
+    <string name="remove_calculations">Remove</string>
+    <string name="edit_calculations">Edit</string>
+    <string name="initial_data">Initial data</string>
+</resources>

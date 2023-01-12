@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="ru.rezvantsev.myapplication.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/FeedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/FeedFragment"
+        android:name="ru.rezvantsev.myapplication.FeedFragment"
+        android:label="@string/add_new_calculation"
+        tools:layout="@layout/feed_fragment">
+        <action
+            android:id="@+id/action_FeedFragment_to_newNMCKFragment"
+            app:destination="@id/newNMCKFragment" />
+        <action
+            android:id="@+id/action_FeedFragment_to_currentNMCKFragment"
+            app:destination="@id/currentNMCKFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNMCKFragment"
+        android:name="ru.rezvantsev.myapplication.ui.NewNMCKFragment"
+        android:label="organization_data_fragment"
+        tools:layout="@layout/organization_data_fragment" >
+        <argument
+            android:name="initialContentNmck"
+            app:argType="long" />
+        <argument
+            android:name="fromFragment"
+            app:argType="string" />
+           </fragment>
+    <fragment
+        android:id="@+id/currentNMCKFragment"
+        android:name="ru.rezvantsev.myapplication.ui.CurrentNMCKFragment"
+        android:label="fragment_current_n_m_c_k"
+        tools:layout="@layout/fragment_current_n_m_c_k" >
+        <action
+            android:id="@+id/currentNMCKFragmentToNewNMCKFragment"
+            app:destination="@id/newNMCKFragment" />
+        <argument
+            android:name="idCurrentNMCK"
+            app:argType="long" />
+        <action
+            android:id="@+id/currentNMCKFragmentToStepNMCKFragment"
+            app:destination="@id/stepNMCKFragment" />
+    </fragment>
+        <fragment
+        android:id="@+id/stepNMCKFragment"
+        android:name="ru.rezvantsev.myapplication.ui.StepNMCKFragment"
+        android:label="add_or_edit_step_fragment" >
+
+        <argument
+            android:name="fromFragment1"
+            app:argType="string" />
+        <argument
+            android:name="fromFragment2"
+            app:argType="string" />
+        <argument android:name="fromFragment3"
+            app:argType="string" />
+        <argument android:name="fromFragment4"
+            app:argType="boolean" />
+        <argument android:name="fromFragment5"
+            app:argType="string" />
+        <argument android:name="fromFragment6"
+            app:argType="string" />
+        <argument android:name="fromFragment7"
+            app:argType="string" />
+        <argument android:name="fromFragment8"
+            app:argType="boolean" />
+        <argument android:name="fromFragment9"
+            app:argType="boolean" />
+        <argument android:name="fromFragment10"
+            app:argType="boolean" />
+        <argument android:name="fromFragment11"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

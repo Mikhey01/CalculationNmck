@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Мое заявление</string>
+    <string name="action_settings">Настройки</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">РАСЧЕТ НМЦК ОХРАНА</string>
+    <string name="second_fragment_label">Второй фрагмент</string>
+    <string name="next">Далее</string>
+    <string name="previous">В начало</string>
+
+    <string name="hello_first_fragment">Привет первый фрагмент</string>
+    <string name="hello_second_fragment">Привет второй фрагмент</string>
+    <string name="CalculationNMCK">РАСЧЕТ НМЦК</string>
+    <string name="textview">На оказание услуг охраны в рамках Федерального закона О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд от 05.04.2013 N 44-ФЗ</string>
+    <string name="Name_organization">Введите наименование организации</string>
+    <string name="there_is_nothing_here">Здесь пока пусто</string>
+    <string name="add_new_calculation">Добавить новый расчет</string>
+    <string name="description_post_save">Сохранить</string>
+    <string name="edit_nmck_author">Должностное лицо заказчика</string>
+    <string name="todo">TODO</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="next_calculation">Детальный расчет</string>
+    <string name="required_data">Введите необходимые данные</string>
+    <string name="number_guards">Количество охранников на посту</string>
+    <string name="security_hours">Количество часов охраны поста</string>
+    <string name="number_days_protection">Количество дней охраны поста</string>
+    <string name="number_posts">Количество требуемых постов охраны по контракту</string>
+    <string name="minimum_wage">Минимальный размер оплаты труда</string>
+    <string name="number_days">Количество праздничных и выходных дней</string>
+    <string name="night_shifts">Ночные смены (да/нет)</string>
+    <string name="special_equipment">Наличие спецсредств у охранника (да/нет)</string>
+    <string name="mass_events">Проведение массовых мероприятий (да/нет)</string>
+    <string name="object_anti_terrorist">Объект с требованиями по антитеррористической защищенности (да/нет)</string>
+    <string name="remove_calculations">Удалить</string>
+    <string name="edit_calculations">Редактировать</string>
+    <string name="initial_data">Исходные данные</string>
+
+</resources>
