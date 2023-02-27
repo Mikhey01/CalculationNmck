@@ -3,7 +3,6 @@ package ru.rezvantsev.myapplication.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import ru.rezvantsev.myapplication.adapter.NmckInteractionListener
 import ru.rezvantsev.myapplication.adapter.StepNMCKInteractionListener
 import ru.rezvantsev.myapplication.dto.DataNMCK
@@ -11,6 +10,7 @@ import ru.rezvantsev.myapplication.dto.StepNMCK
 import ru.rezvantsev.myapplication.repository.FileNMCKRepository
 import ru.rezvantsev.myapplication.repository.NMCKRepository
 import ru.rezvantsev.myapplication.util.SingleLiveEvent
+import ru.rezvantsev.myapplication.util.StringArg
 
 class NmckViewModel(
     application: Application
@@ -21,15 +21,10 @@ class NmckViewModel(
 
     private val currentCalculation = MutableLiveData<DataNMCK?>(null)
     private val currentStepNMCK = MutableLiveData<StepNMCK?>(null)
-    // private val filters = MutableLiveData<MutableSet<String>?>(mutableSetOf())
-
-//    var filterResult = Transformations.switchMap(filters) { filter ->
-//        repository.getFilteredList(filter)
-//    }
 
     val navigateToOrganizationDataFragmentScreenEvent = SingleLiveEvent<DataNMCK>()
     val navigateToCurrentNMCKScreenEvent = SingleLiveEvent<DataNMCK>()
-    val navigateToStepEditScreenEvent = SingleLiveEvent<StepNMCK>()
+    private val navigateToStepEditScreenEvent = SingleLiveEvent<StepNMCK>()
     val navigateToStepAddScreenEvent = SingleLiveEvent<String>()
 
     fun onSaveButtonClicked(
@@ -53,50 +48,40 @@ class NmckViewModel(
         currentCalculation.value = null
     }
 
-     fun onSaveButtonStepClicked(
+    fun onSaveButtonStepClicked(
         NumberGuardsDuty: String,
-        NumberHoursPostSecurity: String,
-        NumberDaysPostSecurity: String,
-        //NightShifts: String,
-        NumberSecurityPosts: String,
-        Mrot: String,
-        ConsumerPriceIndex: String,
-        CorrectionFactorUd1: String,
-        CorrectionFactorUd2: String,
-        CorrectionFactorUd3: String,
-        NumberHolidaysWeekends: String
+      //NumberHoursPostSecurity: String,
+//        NumberDaysPostSecurity: String,
+//        NumberSecurityPosts: String,
+//        Mrot: String,
+//        ConsumerPriceIndex: String,
+//        NumberHolidaysWeekends: String
     ) {
-        if (NumberGuardsDuty.isBlank() || NumberHoursPostSecurity.isBlank()
-            || NumberDaysPostSecurity.isBlank() || NumberSecurityPosts.isBlank() || Mrot.isBlank()
-            || ConsumerPriceIndex.isBlank() || ConsumerPriceIndex.isBlank()
-            || NumberHolidaysWeekends.isBlank()
+        if (NumberGuardsDuty.isBlank()
+//            ||
+//            NumberHoursPostSecurity.isBlank()
+//            || NumberDaysPostSecurity.isBlank() || NumberSecurityPosts.isBlank() || Mrot.isBlank()
+//            || ConsumerPriceIndex.isBlank() || ConsumerPriceIndex.isBlank()
+//            || NumberHolidaysWeekends.isBlank()
         ) return
         val stepForSave = currentStepNMCK.value?.copy(
-            numberGuardsDuty = NumberGuardsDuty.toInt(),
-            numberHoursPostSecurity = NumberHoursPostSecurity.toInt(),
-            numberDaysPostSecurity = NumberDaysPostSecurity.toInt(),
-            nightShifts = false,
-            numberSecurityPosts = NumberSecurityPosts.toInt(),
-            mrot = Mrot.toDouble(),
-            consumerPriceIndex = ConsumerPriceIndex.toDouble(),
-            correctionFactorUd1 = false,
-            correctionFactorUd2 = false,
-            correctionFactorUd3 = false,
-            numberHolidaysWeekends = NumberHolidaysWeekends.toInt()
+            numberGuardsDuty = NumberGuardsDuty,
+//            numberHoursPostSecurity = NumberHoursPostSecurity,
+//            numberDaysPostSecurity = NumberDaysPostSecurity,
+//            numberSecurityPosts = NumberSecurityPosts,
+//            mrot = Mrot,
+//            // consumerPriceIndex = ConsumerPriceIndex.toString(),
+//            numberHolidaysWeekends = NumberHolidaysWeekends
         ) ?: StepNMCK(
-            idStep = NMCKRepository.NEW_STEP_ID,
-            idDataNMCK = currentCalculation.value?.id ?: 0,
-            numberGuardsDuty = NumberGuardsDuty.toInt(),
-            numberHoursPostSecurity = NumberHoursPostSecurity.toInt(),
-            numberDaysPostSecurity = NumberDaysPostSecurity.toInt(),
-            nightShifts = false,
-            numberSecurityPosts = NumberSecurityPosts.toInt(),
-            mrot = Mrot.toDouble(),
-            consumerPriceIndex = ConsumerPriceIndex.toDouble(),
-            correctionFactorUd1 = false,
-            correctionFactorUd2 = false,
-            correctionFactorUd3 = false,
-            numberHolidaysWeekends = NumberHolidaysWeekends.toInt()
+//            idStep = NMCKRepository.NEW_STEP_ID,
+//            idDataNMCK = currentCalculation.value?.id ?: 0,
+            numberGuardsDuty = NumberGuardsDuty,
+//            numberHoursPostSecurity = NumberHoursPostSecurity,
+//            numberDaysPostSecurity = NumberDaysPostSecurity,
+//            numberSecurityPosts = NumberSecurityPosts,
+//            mrot = Mrot,
+//            //    consumerPriceIndex = ConsumerPriceIndex.toString(),
+//            numberHolidaysWeekends = NumberHolidaysWeekends
         )
         repository.saveStep(stepForSave)
         currentStepNMCK.value = null

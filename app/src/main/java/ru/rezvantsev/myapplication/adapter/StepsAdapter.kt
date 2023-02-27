@@ -62,17 +62,17 @@ internal class StepsAdapter(
             this.stepNMCK = stepNMCK
 
             with(binding) {
-                NumberGuards.inputType = stepNMCK.numberGuardsDuty
-                NumberSecurityHours.inputType = stepNMCK.numberHoursPostSecurity
-                NumberDaysProtection.inputType = stepNMCK.numberDaysPostSecurity
-                NumberPosts.inputType = stepNMCK.numberSecurityPosts
-                MinimumWage.inputType = stepNMCK.mrot.toInt()
-                NumberHolidaysWeekends.inputType = stepNMCK.numberHolidaysWeekends
+                NumberGuards.text = stepNMCK.numberGuardsDuty
+//                NumberSecurityHours.text = stepNMCK.numberHoursPostSecurity.toString()
+//                NumberDaysProtection.text = stepNMCK.numberDaysPostSecurity.toString()
+//                NumberPosts.text = stepNMCK.numberSecurityPosts.toString()
+//                MinimumWage.text = stepNMCK.mrot.toString()
+//                NumberHolidaysWeekends.text = stepNMCK.numberHolidaysWeekends.toString()
                 //textCategoryFilter.text = stepNMCK.nightShifts.toString()
-                if (!stepNMCK.nightShifts) textCategoryFilter.text = "НЕТ" else "ДА"
-                if (!stepNMCK.correctionFactorUd1) specialEquipment.text = "НЕТ" else "ДА"
-                if (!stepNMCK.correctionFactorUd2) massEvents.text = "НЕТ" else "ДА"
-                if (!stepNMCK.correctionFactorUd3) antiTerroristSecurity.text = "НЕТ" else "ДА"
+              //  if (!stepNMCK.nightShifts) textCategoryFilter.text = "НЕТ" else "ДА"
+               // if (!stepNMCK.correctionFactorUd1) specialEquipment.text = "НЕТ" else "ДА"
+              //  if (!stepNMCK.correctionFactorUd2) massEvents.text = "НЕТ" else "ДА"
+             //   if (!stepNMCK.correctionFactorUd3) antiTerroristSecurity.text = "НЕТ" else "ДА"
 //                stepContent.text = stepNMCK.stepText
 //                imageStep.isVisible = step.picture.isNotBlank()
 //                if (step.picture.isNotBlank()) imageStep.setImageURI(
@@ -88,12 +88,12 @@ internal class StepsAdapter(
             oldItem == newItem
 
         override fun areContentsTheSame(oldItem: StepNMCK, newItem: StepNMCK) =
-            oldItem.numberGuardsDuty == newItem.numberGuardsDuty &&
-                    oldItem.numberHoursPostSecurity == newItem.numberHoursPostSecurity &&
-                    oldItem.numberDaysPostSecurity == newItem.numberDaysPostSecurity &&
-                    oldItem.numberSecurityPosts == newItem.numberSecurityPosts &&
-                    oldItem.mrot == newItem.mrot &&
-                    oldItem.numberHolidaysWeekends == newItem.numberHolidaysWeekends
+            oldItem.numberGuardsDuty == newItem.numberGuardsDuty
+                    //&&                    oldItem.numberHoursPostSecurity == newItem.numberHoursPostSecurity &&
+//                    oldItem.numberDaysPostSecurity == newItem.numberDaysPostSecurity &&
+//                    oldItem.numberSecurityPosts == newItem.numberSecurityPosts &&
+//                    oldItem.mrot == newItem.mrot &&
+//                    oldItem.numberHolidaysWeekends == newItem.numberHolidaysWeekends
     }
 
     val differ = AsyncListDiffer(this, DiffCallback)

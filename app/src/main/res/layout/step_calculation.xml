@@ -5,29 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/text_dashboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        tools:text="@string/initial_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:text="@string/initial_data" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/Number_guards"
         android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/number_guards"
-        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_dashboard"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:text="@string/number_guards" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/options_step"
@@ -39,111 +36,60 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/Number_security_hours"
         android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/security_hours"
-        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Number_guards"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:text="@string/security_hours" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/Number_days_protection"
         android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/number_days_protection"
-        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Number_security_hours"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:text="@string/number_days_protection" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/Number_posts"
         android:layout_width="336dp"
-        android:layout_height="39dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/number_posts"
-        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Number_days_protection"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:text="@string/number_posts" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/Minimum_wage"
         android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/minimum_wage"
-        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Number_posts"
-        tools:ignore="HardcodedText,MissingConstraints" />
+        tools:text="@string/minimum_wage" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/Number_holidays_weekends"
         android:layout_width="336dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/number_days"
-        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Minimum_wage"
-        tools:ignore="HardcodedText,MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textCategoryFilter"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Number_holidays_weekends"
-        tools:text="@string/night_shifts" />
-
-    <TextView
-        android:id="@+id/specialEquipment"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCategoryFilter"
-        tools:text="@string/special_equipment" />
-
-    <TextView
-        android:id="@+id/massEvents"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/specialEquipment"
-        tools:text="@string/mass_events" />
-
-    <TextView
-        android:id="@+id/antiTerroristSecurity"
-        android:layout_width="336dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/massEvents"
-        tools:text="@string/object_anti_terrorist" />
+        tools:text="@string/number_days" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
