@@ -36,6 +36,7 @@ class NewNMCKFragment : Fragment() {
 
                 binding.nameOrganizationEdit.setText(currentNmck.nameOrganization)
                 binding.nmckAuthorEdit.setText(currentNmck.nameAuthor)
+                binding.nmckGNEdit.setText(currentNmck.numberGuardsDuty)
 //                // val categoriesList = resources.getStringArray(R.array.category_names)
 //                //  val numberCategory = categoriesList.indexOf(currentRecipe.recipeCategory)
 //                //binding.editCategory.setSelection(numberCategory)
@@ -50,6 +51,7 @@ class NewNMCKFragment : Fragment() {
     private fun onOkButtonClicked(binding: OrganizationDataFragmentBinding) {
         val textTitle = binding.nameOrganizationEdit.text.toString()
         val textAuthor = binding.nmckAuthorEdit.text.toString()
+        val textGN = binding.nmckGNEdit.text.toString()
         //  val textCategory = item
 
         if (!textTitle.isBlank()) {
@@ -60,12 +62,14 @@ class NewNMCKFragment : Fragment() {
                 viewModel.onSaveButtonClicked(
                     textTitle,
                     textAuthor,
+                    textGN,
                     null
                 )
             } else if (args.fromFragment == REQUEST_CURRENT_RECIPE_KEY) {
                 viewModel.onSaveButtonClicked(
                     textTitle,
                     textAuthor,
+                    textGN,
                     currentNmck.content
                 )
             }

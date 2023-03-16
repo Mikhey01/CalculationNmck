@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="ui.StepNMCKFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="407dp"
@@ -26,72 +27,72 @@
             android:layout_height="39dp"
             android:layout_marginTop="16dp"
             android:hint="@string/number_guards"
-            android:inputType="numberDecimal"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_dashboard" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/Number_security_hours"
-            android:layout_width="336dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/security_hours"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Number_guards" />
+<!--        <androidx.appcompat.widget.AppCompatEditText-->
+<!--            android:id="@+id/Number_security_hours"-->
+<!--            android:layout_width="336dp"-->
+<!--            android:layout_height="39dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:hint="@string/security_hours"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.493"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/Number_guards" />-->
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/Number_days_protection"
-            android:layout_width="336dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/number_days_protection"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Number_security_hours" />
+<!--        <androidx.appcompat.widget.AppCompatEditText-->
+<!--            android:id="@+id/Number_days_protection"-->
+<!--            android:layout_width="336dp"-->
+<!--            android:layout_height="39dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:hint="@string/number_days_protection"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.493"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/Number_security_hours" />-->
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/Number_posts"
-            android:layout_width="336dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/number_posts"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Number_days_protection" />
+<!--        <androidx.appcompat.widget.AppCompatEditText-->
+<!--            android:id="@+id/Number_posts"-->
+<!--            android:layout_width="336dp"-->
+<!--            android:layout_height="39dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:hint="@string/number_posts"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.493"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/Number_days_protection" />-->
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/Minimum_wage"
-            android:layout_width="336dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/minimum_wage"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Number_posts" />
+<!--        <androidx.appcompat.widget.AppCompatEditText-->
+<!--            android:id="@+id/Minimum_wage"-->
+<!--            android:layout_width="336dp"-->
+<!--            android:layout_height="39dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:hint="@string/minimum_wage"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.493"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/Number_posts" />-->
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/Number_holidays_weekends"
-            android:layout_width="336dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/number_days"
-            android:inputType="numberDecimal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Minimum_wage"
-            tools:ignore="HardcodedText,MissingConstraints" />
+<!--        <androidx.appcompat.widget.AppCompatEditText-->
+<!--            android:id="@+id/Number_holidays_weekends"-->
+<!--            android:layout_width="336dp"-->
+<!--            android:layout_height="39dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:hint="@string/number_days"-->
+<!--            android:inputType="numberDecimal"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.493"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/Minimum_wage"-->
+<!--            tools:ignore="HardcodedText,MissingConstraints" />-->
 
         <Button
             android:id="@+id/button"
@@ -99,9 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
             android:text="Ok"
-            app:layout_constraintEnd_toEndOf="@+id/Number_holidays_weekends"
-            app:layout_constraintStart_toStartOf="@+id/Number_holidays_weekends"
-            app:layout_constraintTop_toBottomOf="@+id/Number_holidays_weekends"
+            app:layout_constraintEnd_toEndOf="@+id/Number_guards"
+            app:layout_constraintStart_toStartOf="@+id/Number_guards"
+            app:layout_constraintTop_toBottomOf="@+id/Number_guards"
             tools:ignore="HardcodedText" />
 
 

@@ -19,6 +19,18 @@
         app:layout_constraintTop_toBottomOf="@+id/name_organization_edit"
         tools:ignore="MissingConstraints" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/edit_nmck_NG"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/number_guards"
+        app:layout_constraintEnd_toEndOf="@+id/edit_nmck_author"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_nmck_author"
+        tools:ignore="MissingConstraints" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/options_step"
         style="@style/Widget.AppTheme.OptionsButton"
@@ -64,6 +76,6 @@
         style="@style/Widget.AppTheme.OptionsButton"
         app:layout_constraintHorizontal_bias="0.339"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_nmck_author" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_nmck_NG" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

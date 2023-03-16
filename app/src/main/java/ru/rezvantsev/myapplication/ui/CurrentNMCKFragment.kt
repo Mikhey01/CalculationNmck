@@ -10,17 +10,16 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import kotlinx.android.synthetic.main.card_list_nmck.*
 import ru.rezvantsev.myapplication.R
+import ru.rezvantsev.myapplication.adapter.NMCKAdaptor
 import ru.rezvantsev.myapplication.adapter.StepsAdapter
 import ru.rezvantsev.myapplication.databinding.FragmentCurrentNMCKBinding
 import ru.rezvantsev.myapplication.dto.DataNMCK
-import ru.rezvantsev.myapplication.dto.StepNMCK
 import ru.rezvantsev.myapplication.viewmodel.NmckViewModel
 
 
 class CurrentNMCKFragment : Fragment() {
-    private val args  by navArgs<CurrentNMCKFragmentArgs>()
+    private val args by navArgs<CurrentNMCKFragmentArgs>()
     private val viewModel: NmckViewModel by activityViewModels()
 
     private lateinit var dataNMCK: DataNMCK
@@ -33,7 +32,7 @@ class CurrentNMCKFragment : Fragment() {
         return FragmentCurrentNMCKBinding.inflate(layoutInflater, container, false)
             .also { binding ->
                 with(binding) {
-                    //    stepsRecyclerViewAdapter = NMCKAdaptor(viewModel)
+                        //stepsRecyclerViewAdapter = NMCKAdaptor(viewModel)
                     val adapter = StepsAdapter(viewModel)
                     stepsRecyclerView.adapter = adapter
 
@@ -81,20 +80,21 @@ class CurrentNMCKFragment : Fragment() {
 
                     viewModel.navigateToStepAddScreenEvent.observe(
                         viewLifecycleOwner
-                    ) {step ->
-                               val direction =
-                                   CurrentNMCKFragmentDirections.currentNMCKFragmentToStepNMCKFragment(
-                                       step
-                                   )
-                                          findNavController().navigate(direction)
+                    ) { step ->
+                        val direction =
+                            CurrentNMCKFragmentDirections.currentNMCKFragmentToStepNMCKFragment(
+                                step
+                            )
+                        findNavController().navigate(direction)
                     }
 
                     setFragmentResultListener(
                         requestKey = StepNMCKFragment.REQUEST_CURRENT_RECIPE_KEY
                     ) { requestKey, bundle ->
-                        if (requestKey != StepNMCKFragment.REQUEST_CURRENT_RECIPE_KEY) return@setFragmentResultListener
-                        val newTextStep   = bundle.getString (
-                           StepNMCKFragment.RESULT_KEY
+                        if (requestKey != StepNMCKFragment.REQUEST_CURRENT_RECIPE_KEY)
+                            return@setFragmentResultListener
+                        val newTextStep = bundle.getString(
+                            StepNMCKFragment.RESULT_KEY
 
                         ) ?: return@setFragmentResultListener
                         viewModel.onSaveButtonStepClicked(newTextStep)
@@ -135,6 +135,7 @@ class CurrentNMCKFragment : Fragment() {
 
         nameOrganization.text = dataNMCK.nameOrganization
         title.text = dataNMCK.nameAuthor
+        titleN.text = dataNMCK.numberGuardsDuty
 
 
     }

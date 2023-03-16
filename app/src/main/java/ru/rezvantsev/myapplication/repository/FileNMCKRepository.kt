@@ -17,7 +17,11 @@ class FileNMCKRepository(
 ) : NMCKRepository {
 
     private val gson = Gson()
-    private val type = TypeToken.getParameterized(List::class.java, DataNMCK::class.java).type
+    private val type = TypeToken.getParameterized(
+        List::class.java,
+        DataNMCK::class.java,
+        StepNMCK::class.java
+    ).type
 
     private val prefs = application.getSharedPreferences(
         "repo", Context.MODE_PRIVATE
@@ -43,6 +47,33 @@ class FileNMCKRepository(
             data.value = value
         }
     override val data: MutableLiveData<List<DataNMCK>>
+
+    private var nmcksStepNMCK
+        get() = checkNotNull(dataStep.value) {
+            "Data value should not be null"
+        }
+        set(value) {
+            application
+                .openFileOutput(FILE_NAME_, Context.MODE_PRIVATE)
+                .bufferedWriter().use {
+                    it.write(gson.toJson(value))
+                }
+            dataStep.value = value
+        }
+    private val dataStep: MutableLiveData<List<StepNMCK>>
+
+    init {
+        val nmcksFileStepNMCK = application.filesDir.resolve(FILE_NAME_)
+        val nmcksStepNMCK: List<StepNMCK> = if (nmcksFileStepNMCK.exists()) {
+            val inputStream = application.openFileInput(FILE_NAME_)
+            val reader = inputStream.bufferedReader()
+            reader.use {
+                gson.fromJson(it, type)
+            }
+        } else emptyList()
+        dataStep = MutableLiveData(nmcksStepNMCK)
+
+    }
 
     init {
         val nmcksFile = application.filesDir.resolve(FILE_NAME)
@@ -83,17 +114,6 @@ class FileNMCKRepository(
 
     override fun save(dataNMCK: DataNMCK) {
         if (dataNMCK.id == NMCKRepository.NEW_DATANMCK_ID) insert(dataNMCK) else update(dataNMCK)
-
-//        fun removeById(postId: Long) {
-//            nmcks = nmcks.filter {
-//                (it.id != postId)
-//            }
-//            //   data.value = posts
-//        }
-
-//         fun cancel() {
-//            data.value = posts
-//        }
     }
 
     override fun deleteStep(stepNMCK: StepNMCK) {
@@ -101,9 +121,17 @@ class FileNMCKRepository(
     }
 
     override fun saveStep(stepNMCK: StepNMCK) {
-        TODO("Not yet implemented")
+        if (stepNMCK.idStep == NMCKRepository.NEW_STEP_ID) insertStep(stepNMCK)
     }
 
+    private fun insertStep(stepNMCK: StepNMCK) {
+        dataStep.value = listOf(
+            stepNMCK.copy(
+                idStep = ++nextId
+            )
+        ) + nmcksStepNMCK
+
+    }
 //    override fun getFilteredList(filters: MutableSet<String>?): LiveData<List<DataNMCK>> {
 //        if (filters.isNullOrEmpty()) {
 //            return data
@@ -121,11 +149,12 @@ class FileNMCKRepository(
     companion object {
         const val NEXT_ID_PREFS_KEY = "nextId"
         const val FILE_NAME = "posts.json"
+        const val FILE_NAME_ = "step.json"
         // const val GENERATED_POSTS_AMOUNT = 1000
 
 
-        //    const val NEW_RECIPE_ID = 0L
-          //  const val NEW_STEP_ID = 0L
+        const val NEW_RECIPE_ID = 0L
+        const val NEW_STEP_ID = 0L
 
     }
 }

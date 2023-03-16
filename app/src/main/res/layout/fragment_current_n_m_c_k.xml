@@ -34,6 +34,21 @@
         app:layout_constraintTop_toBottomOf="@id/name_organization"
         tools:text="@string/edit_nmck_author" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title_N"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="@string/number_guards" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/options"
         style="@style/Widget.AppTheme.OptionsButton"
@@ -48,7 +63,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids=" options"
+        app:constraint_referenced_ids=" title_N"
         tools:layout_editor_absoluteX="@dimen/common_spacing"
         tools:layout_editor_absoluteY="64dp" />
 

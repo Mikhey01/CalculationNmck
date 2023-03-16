@@ -61,7 +61,7 @@
         android:label="add_or_edit_step_fragment"
         tools:layout="@layout/add_or_edit_step_fragment">
         <argument
-            android:name="forCurrentNMCKArgs"
+            android:name="forCurrentNMCKA"
             app:argType="string"
             app:nullable="true" />
     </fragment>

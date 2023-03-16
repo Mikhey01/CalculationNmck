@@ -23,6 +23,23 @@
         app:layout_constraintTop_toBottomOf="@+id/name_organization_edit"
         tools:ignore="HardcodedText,MissingConstraints" />
 
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/nmck_GN_edit"
+        android:layout_width="274dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:ellipsize="end"
+        android:gravity="start|top"
+        android:hint="@string/number_guards"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/nmck_author_edit"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="@+id/nmck_author_edit"
+        app:layout_constraintTop_toBottomOf="@+id/nmck_author_edit"
+        tools:ignore="HardcodedText,MissingConstraints"/>
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/name_organization_edit"
         android:layout_width="280dp"
@@ -59,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nmck_author_edit"
+        app:layout_constraintTop_toBottomOf="@+id/nmck_GN_edit"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_ok_24dp"
         tools:ignore="MissingConstraints" />

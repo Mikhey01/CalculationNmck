@@ -43,6 +43,7 @@ internal class NMCKAdaptor(
             with(binding) {
                 nameOrganizationEdit.text = dataNMCK.nameOrganization
                 editNmckAuthor.text = dataNMCK.nameAuthor
+                editNmckNG.text = dataNMCK.numberGuardsDuty
             }
         }
     }

@@ -24,7 +24,7 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
-                            <entry key="action_SecondFragment_to_newNMCKFragment">
+                            <entry key="action_FeedFragment_to_newNMCKFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -98,8 +98,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-120" />
-                            <option name="y" value="-358" />
+                            <option name="x" value="-111" />
+                            <option name="y" value="-362" />
                           </Point>
                         </option>
                       </LayoutPositions>

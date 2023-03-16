@@ -30,17 +30,20 @@ class NmckViewModel(
     fun onSaveButtonClicked(
         nameOrganization: String,
         nameAuthor: String,
+        numberGuardsDuty : String,
         content: List<StepNMCK>?
     ) {
         val nmckForSave =
             currentCalculation.value?.copy(
                 nameOrganization = nameOrganization,
                 nameAuthor = nameAuthor,
+                numberGuardsDuty = numberGuardsDuty,   //Lj.fdbk
                 content = content
             ) ?: DataNMCK(
                 id = NMCKRepository.NEW_DATANMCK_ID,
                 nameOrganization = nameOrganization,
                 nameAuthor = nameAuthor,
+                numberGuardsDuty = numberGuardsDuty,   //Lj.fdbk
                 content = content,
                 //indexPosition = repository.getNextIndexId()
             )
@@ -48,8 +51,7 @@ class NmckViewModel(
         currentCalculation.value = null
     }
 
-    fun onSaveButtonStepClicked(
-        NumberGuardsDuty: String,
+    fun onSaveButtonStepClicked( NumberGD: String,
       //NumberHoursPostSecurity: String,
 //        NumberDaysPostSecurity: String,
 //        NumberSecurityPosts: String,
@@ -57,7 +59,7 @@ class NmckViewModel(
 //        ConsumerPriceIndex: String,
 //        NumberHolidaysWeekends: String
     ) {
-        if (NumberGuardsDuty.isBlank()
+        if (NumberGD.isBlank()
 //            ||
 //            NumberHoursPostSecurity.isBlank()
 //            || NumberDaysPostSecurity.isBlank() || NumberSecurityPosts.isBlank() || Mrot.isBlank()
@@ -65,7 +67,7 @@ class NmckViewModel(
 //            || NumberHolidaysWeekends.isBlank()
         ) return
         val stepForSave = currentStepNMCK.value?.copy(
-            numberGuardsDuty = NumberGuardsDuty,
+            numberGuardsDuty = NumberGD,
 //            numberHoursPostSecurity = NumberHoursPostSecurity,
 //            numberDaysPostSecurity = NumberDaysPostSecurity,
 //            numberSecurityPosts = NumberSecurityPosts,
@@ -73,9 +75,9 @@ class NmckViewModel(
 //            // consumerPriceIndex = ConsumerPriceIndex.toString(),
 //            numberHolidaysWeekends = NumberHolidaysWeekends
         ) ?: StepNMCK(
-//            idStep = NMCKRepository.NEW_STEP_ID,
-//            idDataNMCK = currentCalculation.value?.id ?: 0,
-            numberGuardsDuty = NumberGuardsDuty,
+            idStep = FileNMCKRepository.NEW_STEP_ID,
+            idDataNMCK = currentCalculation.value?.id ?: 0,
+            numberGuardsDuty = NumberGD,
 //            numberHoursPostSecurity = NumberHoursPostSecurity,
 //            numberDaysPostSecurity = NumberDaysPostSecurity,
 //            numberSecurityPosts = NumberSecurityPosts,

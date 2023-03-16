@@ -5,8 +5,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class StepNMCK(
-   // val idStep: Long,
-   // val idDataNMCK: Long,
+    val idStep: Long,
+    val idDataNMCK: Long,
     val numberGuardsDuty: String,                       //Количество охранников на посту
    // val numberHoursPostSecurity: String,                //Количество часов охраны поста
    // val numberDaysPostSecurity: String,                     //Количество дней охраны поста
